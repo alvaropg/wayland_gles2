@@ -557,6 +557,7 @@ int main() {
   else LOG("Got a compositor surface !\n");
 
   shell_surface = wl_shell_get_shell_surface(shell, surface);
+  wl_shell_surface_set_title(shell_surface, "test_title");
   wl_shell_surface_set_toplevel(shell_surface);
 
   CreateWindowWithEGLContext("Nya", 1280, 720);
