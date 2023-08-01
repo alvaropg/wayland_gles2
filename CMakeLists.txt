@@ -6,6 +6,7 @@ include_directories(${CMAKE_SOURCE_DIR}/src)
 include_directories(${CMAKE_SOURCE_DIR}/include)
 
 include(FindPkgConfig)
+include(GNUInstallDirs)
 
 pkg_check_modules(WLCLIENT REQUIRED wayland-client)
 include_directories(${WLCLIENT_INCLUDE_DIRS})
@@ -34,3 +35,4 @@ target_link_libraries (${BIN_NAME}
         -lm
 )
 
+install(TARGETS ${BIN_NAME} DESTINATION ${CMAKE_INSTALL_BINDIR})
